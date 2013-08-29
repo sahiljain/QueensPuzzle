@@ -8,7 +8,7 @@ public class mainclass {
 			pawns[i] = -1;
 		}
 		pawns[0]=0;
-		outputBoard(pawns);
+		//outputBoard(pawns);
 		checkIfValid(pawns, 0);
 
 	}
@@ -25,7 +25,7 @@ public class mainclass {
 		System.out.println("starting");
 
 		if (horizontalValid(pawns, curPawn) && diagonalValid(pawns, curPawn)) {
-			System.out.println("all valid");
+			//System.out.println("all valid");
 			// valid board and filled
 			if (curPawn == 7) {
 				outputBoard(pawns);
@@ -39,10 +39,11 @@ public class mainclass {
 		} else {
 			// invalid placed rightmost pawn, edit position
 			System.out.println("invalid");
+		//	outputBoard(pawns);
+			 pawns[curPawn]++;
+			int checkme = pawns[curPawn];
 			outputBoard(pawns);
-			int checkme = ++pawns[curPawn];
-			outputBoard(pawns);
-			System.out.println(checkme +" is checkme");
+			//System.out.println(checkme +" is checkme");
 			// see if you went off the board
 			if (checkme == 8) {
 				pawns[curPawn] = -1;
